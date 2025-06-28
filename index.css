@@ -1,0 +1,142 @@
+:root {
+    --purple: #543864;
+    --purple-dark: #452a55;
+    --orange: #ff6363;
+    --orange-light: #f8a488;
+    --orange-dark: rgb(224, 136, 107);
+    --yellow: #ffbd69;
+    --green: #edffa9;
+    --pink: #eca3f5;
+    --bg: #f8f5f1;
+}
+
+main {
+    min-height: 80vh;
+}
+
+main section {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+    gap: 30px;
+    padding: 0;
+}
+
+header h2 {
+    padding: 0 1rem;
+}
+
+footer a,
+footer p {
+    color: #fff;
+}
+
+footer a {
+    text-decoration: underline;
+}
+
+.algo a {
+    position: relative;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* ✅ Maintain original box size explicitly */
+    width: 250px;
+    height: 250px;
+
+    font-size: 3rem;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s linear;
+    overflow: hidden;
+    background-color: black;
+}
+
+.one a::after,
+.one a::before,
+.three a::after,
+.three a::before {
+    background-color: black;
+}
+
+.algo a:hover {
+    border: 10px solid white;
+    box-shadow: 0 10px 6px -5px hsl(0, 0%, 77%);
+}
+
+.one a::before {
+    content: "BFS";
+}
+
+.three a::before {
+    content: "DFS";
+}
+
+.one a::after {
+    content: "Breadth First Search Traversal of graph";
+}
+
+.three a::after {
+    content: "Depth First Search Traversal of graph";
+}
+
+.algo a::after,
+.algo a::before {
+    position: absolute;
+    text-align: center;
+    padding: 0.5rem;
+    width: calc(100% - 1rem);
+    left: 0;
+    font-size: 1rem;
+    transition: transform ease 0.3s;
+}
+
+.algo a::before {
+    height: 20%;
+    top: 0;
+    transform: translateY(-100%);
+}
+
+.algo a::after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    transform: translateY(100%);
+    top: 20%;
+}
+
+.algo a:hover::before,
+.algo a:hover::after {
+    transform: translateY(0);
+}
+
+.heading {
+    justify-content: center;
+}
+
+.links {
+    height: inherit;
+}
+
+.maindiv {
+    justify-content: center;
+    align-items: center;
+}
+
+.linkcolor {
+    color: rgba(1, 1, 6, 0.845);
+}
+
+@media only screen and (max-width: 650px) {
+    main section {
+        grid-template-columns: 1fr;
+    }
+
+    .algo a {
+        width: 250px;
+        height: 250px;
+    }
+}
